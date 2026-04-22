@@ -2,7 +2,7 @@
 
 Submission by **Nandish Mahadev Karki** · [linkedin.com/in/nandish-karki](https://linkedin.com/in/nandish-karki) · Magdeburg, Germany
 
-> **Live demo:** [pryzm-data-integration-task-v4jluapxpud6kwzsb7dhfm.streamlit.app](https://pryzm-data-integration-task-v4jluapxpud6kwzsb7dhfm.streamlit.app/) — interactive companion to the PDF: browse the DQ checks, see the figures, and drop a CSV/XLSX into the Validator tab to see the proposed intake schema accept or reject it row-by-row.
+> **Live demo:** [pryzm-data-integration-task.streamlit.app](https://pryzm-data-integration-task.streamlit.app/) — interactive companion to the PDF: browse the DQ checks, see the figures, and drop a CSV/XLSX into the Validator tab to see the proposed intake schema accept or reject it row-by-row.
 
 ## Task
 
