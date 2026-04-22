@@ -1,0 +1,15 @@
+Dimension,Check,Failing rows,% of total,Severity,Pricing-model impact
+Validity,Currency column absent,1067371,100.00%,Blocker,"Without an explicit currency, any multi-country pricing model silently mixes GBP, EUR, and other currencies as if comparable."
+Completeness,Customer ID is null,243007,22.77%,Blocker,Customer-level price elasticity and retention segmentation both require a stable customer key. Null customer IDs cannot be imputed without ambiguity.
+Completeness,Price is null,0,0.00%,Blocker,Price is the target variable for a pricing model; null rows are unusable.
+Uniqueness,Exact duplicate rows,12133,1.14%,High,"Duplicate rows inflate both revenue and volume, biasing any aggregation-based feature."
+Validity,Price <= 0,6207,0.58%,High,Zero or negative unit prices contaminate the price distribution and bias any learned elasticity curve.
+Anomaly,"Non-product stock codes (POST, DOT, BANK CHARGES, TEST, etc.)",5810,0.54%,High,Adjustments and fees share the transactional schema but are not products; leaving them in dominates the loss during training.
+Integrity,Negative quantity on non-cancellation invoice,3457,0.32%,High,"Negative quantities outside the cancellation convention are ambiguous — adjustments, returns, or data errors are indistinguishable."
+Integrity,Cancellation rows with no matching original purchase,2234,0.21%,High,"Unmatched cancellations either inflate returns or indicate lost origin records; either way, net-revenue features will be wrong."
+Consistency,StockCodes with multiple distinct descriptions,420566,39.40%,Medium,Description drift on the same SKU signals upstream master-data inconsistency and breaks text-based features.
+Uniqueness,"Duplicate (Invoice, StockCode) pairs",88585,8.30%,Medium,Multiple lines of the same SKU on the same invoice should be consolidated with summed quantity; otherwise line counts misrepresent basket size.
+Consistency,StockCode casing / whitespace variants for the same product,66980,6.28%,Medium,Same product appearing under multiple SKU strings prevents price-history aggregation and splits demand signal.
+Completeness,Description is null or empty,8764,0.82%,Medium,Missing descriptions hide product clustering signals and block human review of anomalies.
+Validity,Quantity == 0,0,0.00%,Medium,Zero-quantity rows contribute no revenue and no volume signal; they should be excluded before modelling.
+Anomaly,Price > 99.99th percentile (2555.82),107,0.01%,Low,A handful of manual-adjustment rows at £10k+ dominate summary statistics and skew log-transformed features.

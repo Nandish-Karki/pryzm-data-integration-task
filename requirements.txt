@@ -1,0 +1,8 @@
+pandas>=2.1
+numpy>=1.26
+matplotlib>=3.8
+openpyxl>=3.1
+pandera>=0.18
+tabulate>=0.9
+jupyter>=1.0
+notebook>=7.0
