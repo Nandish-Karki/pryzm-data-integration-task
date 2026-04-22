@@ -1,6 +1,8 @@
-data/
+data/*
+!data/sample.parquet
 .venv/
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
 .DS_Store
+SUBMISSION_EMAIL.md
