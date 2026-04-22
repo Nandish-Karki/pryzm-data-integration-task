@@ -9,7 +9,8 @@ urlcolor: RoyalBlue
 ---
 
 **Nandish Mahadev Karki** · nkarki2791@gmail.com · [linkedin.com/in/nandish-karki](https://linkedin.com/in/nandish-karki) · Magdeburg, Germany
-*Submission for PRYZM Data Integration Intern take-home · Reproducible code: [github.com/Nandish-Karki/pryzm-data-integration-task](https://github.com/Nandish-Karki/pryzm-data-integration-task)*
+*Submission for PRYZM Data Integration Intern take-home*
+*Live interactive demo: [pryzm-data-integration-task-v4jluapxpud6kwzsb7dhfm.streamlit.app](https://pryzm-data-integration-task-v4jluapxpud6kwzsb7dhfm.streamlit.app/) · Code: [github.com/Nandish-Karki/pryzm-data-integration-task](https://github.com/Nandish-Karki/pryzm-data-integration-task)*
 
 
 ## TL;DR
