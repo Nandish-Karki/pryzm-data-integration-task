@@ -13,6 +13,7 @@ from pathlib import Path
 import pandas as pd
 
 DATA_PATH = Path(__file__).resolve().parents[1] / "data" / "online_retail_II.xlsx"
+SAMPLE_PATH = Path(__file__).resolve().parents[1] / "data" / "sample.parquet"
 
 SHEETS = ("Year 2009-2010", "Year 2010-2011")
 
@@ -65,6 +66,11 @@ def load(path: Path | str = DATA_PATH) -> pd.DataFrame:
     combined["InvoiceDate"] = pd.to_datetime(combined["InvoiceDate"], errors="coerce")
 
     return combined
+
+
+def load_sample(path: Path | str = SAMPLE_PATH) -> pd.DataFrame:
+    """Load the 50k-row stratified sample used by the Streamlit demo."""
+    return pd.read_parquet(Path(path))
 
 
 def summarise(df: pd.DataFrame) -> LoadSummary:
